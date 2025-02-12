@@ -37,6 +37,14 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 // Serve uploaded files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+app.get('/', (req, res) => {
+  res.send({
+    activeStatus: true,
+    error: false,
+    message: "Server is running"
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
