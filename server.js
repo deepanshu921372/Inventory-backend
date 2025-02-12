@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'https://homestack.netlify.app/', // Allow only your frontend
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+    origin: ['https://homestack.netlify.app/', 'http://localhost:5174'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
 }));
 
 // Connect to MongoDB
